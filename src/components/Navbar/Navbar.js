@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
-
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { connect } from "react-redux";
 
 const Navbar = ({ cart }) => {
@@ -24,12 +24,10 @@ const Navbar = ({ cart }) => {
       <Link to="/cart">
         <div className={styles.navbar__cart}>
           <h3 className={styles.cart__title}>Cart</h3>
-          <img
-            className={styles.cart__image}
-            src="https://image.flaticon.com/icons/svg/102/102276.svg"
-            alt="shopping cart"
-          />
-          <div className={styles.cart__counter}>{cartCount}</div>
+          <div style={{ display: "flex" }}>
+            <AiOutlineShoppingCart style={{ fontSize: "xx-large" }} />
+            <div className={styles.cart__counter}>{cartCount}</div>
+          </div>
         </div>
       </Link>
     </div>

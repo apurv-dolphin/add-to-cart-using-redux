@@ -6,6 +6,7 @@ import {
   adjustItemQty,
   removeFromCart,
 } from "../../../redux/Shopping/shopping-actions";
+import { AiOutlineDelete } from "react-icons/ai";
 
 const CartItem = ({ item, adjustQty, removeFromCart }) => {
   const [input, setInput] = useState(item.qty);
@@ -43,10 +44,7 @@ const CartItem = ({ item, adjustQty, removeFromCart }) => {
           onClick={() => removeFromCart(item.id)}
           className={styles.actions__deleteItemBtn}
         >
-          <img
-            src="https://image.flaticon.com/icons/svg/709/709519.svg"
-            alt=""
-          />
+          <AiOutlineDelete style={{ fontSize: "xx-large" }} />
         </button>
       </div>
     </div>
