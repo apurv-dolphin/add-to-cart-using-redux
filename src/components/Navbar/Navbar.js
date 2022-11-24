@@ -18,15 +18,17 @@ const Navbar = ({ cart }) => {
 
   return (
     <div className={styles.navbar}>
-      <Link to="/">
-        <h2 className={styles.navbar__logo}>Redux Shopping Cart</h2>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <h2 className={styles.navbar__logo}>AK Shopping Cart</h2>
       </Link>
-      <Link to="/cart">
+      <Link to="/cart" style={{ textDecoration: 'none' }}>
         <div className={styles.navbar__cart}>
           <h3 className={styles.cart__title}>Cart</h3>
           <div style={{ display: "flex" }}>
             <AiOutlineShoppingCart style={{ fontSize: "xx-large" }} />
-            <div className={styles.cart__counter}>{cartCount}</div>
+            {cartCount !== 0 && (
+              <div className={styles.cart__counter}>{cartCount}</div>
+            )}
           </div>
         </div>
       </Link>

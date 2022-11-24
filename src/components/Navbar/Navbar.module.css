@@ -13,7 +13,9 @@
 .navbar__logo {
   font-size: 40px;
   font-weight: bold;
-  color: #fff;
+  background-image: -webkit-linear-gradient(7deg, #f35626, #feab3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .navbar__cart {
@@ -49,8 +51,8 @@
   width: 20px;
   border: 1px solid var(--secondary-color);
   border-radius: 50%;
-  color: var(--dark-color);
-  background: var(--light-color);
+  color: #fff;
+  background: #6621e3;
   font-size: 14px;
   display: flex;
   justify-content: center;

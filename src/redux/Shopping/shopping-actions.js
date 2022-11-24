@@ -30,7 +30,12 @@ export const adjustItemQty = (itemID, qty) => {
 
 export const loadCurrentItem = (item) => {
   return {
-    type: actionTypes.LOAD_CURRENT_ITEM,
-    payload: item,
+    type: actionTypes.LOAD_CURRENT_ITEM
+  };
+};
+
+export const clearAllItems = () => {
+  return {
+    type: actionTypes.CLEAR_ALL_CART,
   };
 };

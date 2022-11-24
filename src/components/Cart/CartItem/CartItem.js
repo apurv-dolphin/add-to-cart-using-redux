@@ -13,6 +13,9 @@ const CartItem = ({ item, adjustQty, removeFromCart }) => {
 
   const onChangeHandler = (e) => {
     setInput(e.target.value);
+  };
+
+  const qtyadd = (e) => {
     adjustQty(item.id, e.target.value);
   };
 
@@ -38,6 +41,7 @@ const CartItem = ({ item, adjustQty, removeFromCart }) => {
             name="qty"
             value={input}
             onChange={onChangeHandler}
+            onBlur={qtyadd}
           />
         </div>
         <button

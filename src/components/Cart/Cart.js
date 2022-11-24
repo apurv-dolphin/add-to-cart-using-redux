@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Cart.module.css";
 
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 
 import CartItem from "./CartItem/CartItem";
+import { Link } from "react-router-dom";
+import { clearAllItems } from "../../redux/Shopping/shopping-actions";
 
 const Cart = ({ cart }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     let items = 0;
@@ -35,9 +39,15 @@ const Cart = ({ cart }) => {
           <span>TOTAL: ({totalItems} items)</span>
           <span>$ {totalPrice}</span>
         </div>
-        <button className={styles.summary__checkoutBtn}>
-          Proceed To Checkout
-        </button>
+        <Link to="/checkout" style={{ textDecoration: "none" }}>
+          <button
+            className={styles.summary__checkoutBtn}
+            onClick={() => dispatch(clearAllItems())}
+            disabled={cart.length === 0}
+          >
+            Proceed To Checkout
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -13,6 +13,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
 import SingleItem from "./components/SingleItem/SingleItem";
+import "bootstrap/dist/css/bootstrap.min.css";
+import CheckOut from "./components/Checkout/CheckOut";
 
 function App({ current }) {
   return (
@@ -22,6 +24,7 @@ function App({ current }) {
         <Switch>
           <Route exact path="/" component={Products} />
           <Route exact path="/cart" component={Cart} />
+          <Route exact path="/checkout" component={CheckOut} />
           {!current ? (
             <Redirect to="/" />
           ) : (

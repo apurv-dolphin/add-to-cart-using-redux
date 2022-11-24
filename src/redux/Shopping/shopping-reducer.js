@@ -6,7 +6,7 @@ const INITIAL_STATE = {
       id: 1,
       title: "This is the COOLEST Cube Ever",
       description:
-        "This cube will keep you busy the entire day and it is very fun to play with",
+        "This cube will keep you busy the entire day and it is very fun to play with and it is in demand.",
       price: 150.0,
       image:
         "https://images.unsplash.com/photo-1591991731833-b4807cf7ef94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
@@ -15,16 +15,16 @@ const INITIAL_STATE = {
       id: 2,
       title: "Large Coffee Cup",
       description:
-        "Get a big cup of coffee every morning before the day starts",
+        "Get a big cup of coffee every morning before the day starts and keep it hot almost 2 and half an hour.",
       price: 200.0,
       image:
         "https://images.unsplash.com/photo-1572119865084-43c285814d63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
     },
     {
       id: 3,
-      title: "Books That CHANGED My Life",
+      title: "Books That Change My Life",
       description:
-        "These books will keep you busy all throughout the entire lockdown and give you some great advise from famous people",
+        "These books will keep you busy all throughout the entire lockdown and give you some great advise from famous people and you learn more and more with famous people exprience about his/her life and journey.",
       price: 150.0,
       image:
         "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80",
@@ -37,7 +37,7 @@ const INITIAL_STATE = {
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actionTypes.ADD_TO_CART:
-      // Great Item data from products array
+      // Get Item data from products array
       const item = state.products.find(
         (product) => product.id === action.payload.id
       );
@@ -75,6 +75,10 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         ...state,
         currentItem: action.payload,
       };
+
+    case actionTypes.CLEAR_ALL_CART:
+      return { ...state, cart: [] };
+
     default:
       return state;
   }
